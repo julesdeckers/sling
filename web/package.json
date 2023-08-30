@@ -10,7 +10,7 @@
     "eslint-plugin-import": "^2.0.1",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.4.1",
-    "react-scripts": "0.6.1"
+    "react-scripts": "1.1.1"
   },
   "dependencies": {
     "aphrodite": "^0.6.0",
@@ -23,11 +23,12 @@
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
     "react-router": "4.0.0-alpha.5",
-    "react-scripts": "0.7.0",
+    "react-scripts": "1.1.1",
     "redux": "^3.6.0",
     "redux-form": "^6.1.1",
     "redux-thunk": "^2.1.0",
-    "s3": "^4.4.0"
+    "s3": "^4.4.0",
+    "@snyk/protect": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,6 +36,9 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "upload": "node scripts/upload.js",
-    "deploy": "rm -rf build && npm run build && npm run upload"
-  }
+    "deploy": "rm -rf build && npm run build && npm run upload",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
+  },
+  "snyk": true
 }
